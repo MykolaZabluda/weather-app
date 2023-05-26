@@ -247,4 +247,20 @@ export default {
         height: auto;
     }
 }
+
+@media (min-width: 200px) and (max-width: 900px)  {
+    .cards-block {
+        display: flex;
+        flex-direction: column !important;
+
+        .card {
+            width: 60% !important;
+            margin-bottom: 30px !important;
+
+            .delete {
+                margin-left: 495px !important;
+            }
+        }
+    }
+}
 </style>
