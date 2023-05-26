@@ -247,4 +247,12 @@ export default {
         height: auto;
     }
 }
+
+@media (min-width: 1000px) and (max-width: 1300px)  {
+    .cards-block {
+        .card {
+            width: 33%;
+        }
+    }
+}
 </style>
