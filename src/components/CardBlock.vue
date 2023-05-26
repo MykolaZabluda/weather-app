@@ -1,12 +1,10 @@
 <template>
     <div id="wrapper" class="wrapper">
         <div class="alert" v-show="showAlert">
-            <!-- <i class="fa fa-times-circle"></i> -->
             To many cards
         </div>
         <div class="input-container">
             <div id="selectCity" class="select-city">
-            <!-- <input id="field" v-model="searchCity" type="text" class="input" placeholder="Search city"> -->
                 <input id="field" v-on:input="setup" v-model="searchCity" type="text" pattern="\d*" class="input"
                     placeholder="Search city" />
                 <div v-show="cities" class="dropdown-cities">
@@ -25,22 +23,6 @@
                 <p class="status">{{ card.weather[0].main }}<span>Sunrise {{ card.sys.sunrise | formatDate }} <span class="dot">•</span> Sunset
                         {{ card.sys.sunset | formatDate }}</span></p>
                 <p class="temperature">{{ card.main.temp | formatTemp }}°C</p>
-                <!-- <table>
-                    <tr>
-                        <td>TUE</td>
-                        <td>WED</td>
-                        <td>THU</td>
-                        <td>FRI</td>
-                        <td>SAT</td>
-                    </tr>
-                    <tr>
-                        <td>30°</td>
-                        <td>34°</td>
-                        <td>36°</td>
-                        <td>34°</td>
-                        <td>37°</td>
-                    </tr>                   
-                </table> -->
             </div>
         </div>
         <LineChart class="chart" ref="selectCity" />
@@ -165,7 +147,6 @@ export default {
             border: none;
             border-color: transparent;
             border-bottom: 1px solid #000;
-            // margin-left: 7px;
         }
 
         textarea:focus,
@@ -179,10 +160,8 @@ export default {
             width: 30%;
 
             .dropdown-cities {
-                // width: 30%;
                 text-align: left;
                 margin: auto;
-                // border: 1px solid #000;
             }
         }
 
