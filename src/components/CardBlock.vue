@@ -248,10 +248,18 @@ export default {
     }
 }
 
-@media (min-width: 1000px) and (max-width: 1300px)  {
+@media (min-width: 200px) and (max-width: 900px)  {
     .cards-block {
+        display: flex;
+        flex-direction: column !important;
+
         .card {
-            width: 33%;
+            width: 60% !important;
+            margin-bottom: 30px !important;
+
+            .delete {
+                margin-left: 495px !important;
+            }
         }
     }
 }
