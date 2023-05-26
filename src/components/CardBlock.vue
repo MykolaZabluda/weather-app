@@ -91,7 +91,7 @@ export default {
         },
         setup() {
             axios
-                .get(`http://api.openweathermap.org/geo/1.0/direct?q={${this.searchCity}}&units=metric&limit=10&appid=9f2b2e8cd60541bbd9ad927b1a5cda93`, { headers: { 'Content-Type': 'application/json' } })
+                .get(`https://api.openweathermap.org/geo/1.0/direct?q={${this.searchCity}}&units=metric&limit=10&appid=9f2b2e8cd60541bbd9ad927b1a5cda93`, { headers: { 'Content-Type': 'application/json' } })
                 .then(response => {
                     this.cities = [];
                     response.data.forEach(item => {
