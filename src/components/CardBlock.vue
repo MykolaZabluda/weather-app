@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         getClientIP() {
-            axios.get('https://ipapi.co/json/', { headers: { 'Content-Type': 'application/json' } })
+            axios.get('http://ipapi.co/json/', { headers: { 'Content-Type': 'application/json' } })
                 .then(responce => {
                     this.clientCity = responce.data.city;
                     this.setChartByCity(this.clientCity)
@@ -71,7 +71,7 @@ export default {
         },
         getWeatherByCity(cityName) {
             axios
-                .get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=9f2b2e8cd60541bbd9ad927b1a5cda93`, { headers: { 'Content-Type': 'application/json' } })
+                .get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=9f2b2e8cd60541bbd9ad927b1a5cda93`, { headers: { 'Content-Type': 'application/json' } })
                 .then(response => {
                     if (this.info.length < 5) {
                         this.info.push(response.data);
@@ -83,7 +83,7 @@ export default {
         },
         getForecast(cityName) {
             axios
-                .get(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=9f2b2e8cd60541bbd9ad927b1a5cda93`, { headers: { 'Content-Type': 'application/json' } })
+                .get(`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=9f2b2e8cd60541bbd9ad927b1a5cda93`, { headers: { 'Content-Type': 'application/json' } })
                 .then(response => console.log(response));
         },
         setChartByCity: function (cityName) {
@@ -248,19 +248,19 @@ export default {
     }
 }
 
-@media (min-width: 200px) and (max-width: 900px)  {
-    .cards-block {
-        display: flex;
-        flex-direction: column !important;
+// @media (min-width: 200px) and (max-width: 900px)  {
+//     .cards-block {
+//         display: flex;
+//         flex-direction: column !important;
 
-        .card {
-            width: 60% !important;
-            margin-bottom: 30px !important;
+//         .card {
+//             width: 60% !important;
+//             margin-bottom: 30px !important;
 
-            .delete {
-                margin-left: 495px !important;
-            }
-        }
-    }
-}
+//             .delete {
+//                 margin-left: 495px !important;
+//             }
+//         }
+//     }
+// }
 </style>
